@@ -13,6 +13,7 @@ WSYSOFILES=\
 	winsize.$O\
 
 <|sh ./mkwsysrules.sh
+<|sh ./mkxfixesrules.sh
 
 OFILES=$WSYSOFILES
 

@@ -1331,7 +1331,9 @@ rpc_setmouse(Client *client, Point p)
 	Xwin *w = (Xwin*)client->view;
 
 	xlock();
+	XFixesHideCursor(_x.display, w->drawable);
 	XWarpPointer(_x.display, None, w->drawable, 0, 0, 0, 0, p.x, p.y);
+	XFixesShowCursor(_x.display, w->drawable);
 	XFlush(_x.display);
 	xunlock();
 }
